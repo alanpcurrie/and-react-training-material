@@ -5,11 +5,8 @@
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {
-    "@tanstack/react-query": "4.2.1",
-    "axios": "0.27.2",
     "babel-plugin-styled-components": "2.0.7",
     "polished": "4.2.2",
-    "ramda": "0.28.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-router": "6.3.0",

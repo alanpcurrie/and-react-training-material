@@ -21,9 +21,8 @@ export const useFetch = (url) => {
         setStatus("fetched");
       }
     };
-
     fetchData();
   }, [url]);
 
-  return { status, data };
+  return { status, data, cache };
 };

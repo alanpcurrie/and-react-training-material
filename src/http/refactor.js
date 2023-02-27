@@ -1,6 +1,6 @@
 import { useEffect, useRef, useReducer } from "react";
 
-export const useFetch2 = (url) => {
+export const useFetch = (url) => {
   const cache = useRef({});
 
   const initialState = {
@@ -9,19 +9,24 @@ export const useFetch2 = (url) => {
     data: []
   };
 
+
+
   const reducerMap = {
     FETCHING: (state, action) => ({
       ...initialState,
+      ...state,
       status: "fetching",
       data: action.payload
     }),
     FETCHED: (state, action) => ({
       ...initialState,
+      ...state,
       status: "fetched",
       data: action.payload
     }),
     FETCH_ERROR: (state, action) => ({
       ...initialState,
+      ...state,
       status: "error",
       error: action.payload
     })
@@ -62,5 +67,5 @@ export const useFetch2 = (url) => {
     };
   }, [url]);
 
-  return state;
+  return { state };
 };

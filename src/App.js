@@ -24,19 +24,16 @@ const StyledButton = styled.button`
 export default function App() {
   const [products] = useState(DATA);
   const [basket, setBasket] = useState([]);
-  useDebugValue("hi from basket", basket);
+
   const addToBasket = (index) => {
     setBasket([...basket, ...[products[index]]]);
   };
 
-  // refactor to array util example
-  // const removeFromBasket = (index) => {
-  //   setBasket([...basket.slice(0, index), ...basket.slice(index + 1)]);
-  // };
-
   const calculatePrice = () => {
     return basket.reduce((price, product) => price + product.price, 0);
   };
+
+  useDebugValue("hi from basket", basket);
 
   return (
     <Layout>
